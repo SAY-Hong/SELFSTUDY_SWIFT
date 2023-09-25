@@ -6,106 +6,6 @@
 //
 
 import Foundation
-//예제6
-for danNuber in 1...9 {
-    print("\(danNuber)단: ", terminator: "")
-    for number in 1...9 {
-        print("\(danNuber) * \(number) = \(danNuber * number)", terminator: "\t")
-    }
-    print("")
-}
-//예제7
-let number = input(message: "정수 입력: ")
-for i in 1...number {
-    if number % i == 0 {
-        print(i, terminator: " ")
-    }
-}
-
-//예제 8
-for number in 2...30 {
-    print("\(number)의 약수: ", terminator: "")
-    for i in 1...number {
-        if number % i == 0{
-            print(i, terminator: " ")
-        }
-    }
-    print("")
-}
-
-//예제9-1
-for i in 1...5 {
-    for _ in 1...i {
-        print("*", terminator: "")
-    }
-    print("")
-}
-
-//예제 9-2
-for i in (1...5).reversed() {
-    var stars: String = ""
-    for _ in (1...i).reversed() {
-        stars += "*"
-    }
-    print(stars)
-}
-
-//예제9-3
-for i in 1...5 {
-    var stars: String = ""
-    for _ in 0..<5-i {
-        stars += " "
-    }
-    for _ in 1...i {
-        stars += "*"
-    }
-    print(stars)
-}
-
-//예제9-3-(2)
-for i in 1...5 {
-    for _ in 0..<5-i {
-        print(" ", terminator: "")
-    }
-    for _ in 1...i {
-        print("*", terminator: "")
-    }
-    print("")
-}
-
-//예제9-4
-for i in 1...5 {
-    var stars: String = ""
-    for _ in 0..<5-i {
-         stars += " "
-    }
-    for _ in 1...i*2 {
-        stars += "*"
-    }
-    print(stars)
-}
-for i in (1...5).reversed() {
-    var stars: String = ""
-    for _ in 0..<5-i {
-         stars += " "
-    }
-    for _ in 1...i*2 {
-        stars += "*"
-    }
-    print(stars)
-}
-
-//예제9-4-(2)
-for i in 1...5{
-    let spaces = String(repeating: " ", count: 6 - i)
-    let stars = String(repeating: "**", count: i)
-    print(spaces + stars)
-}
-for i in (1...5).reversed(){
-    let spaces = String(repeating: " ", count: 6 - i)
-    let stars = String(repeating: "**", count: i)
-    print(spaces + stars)
-}
 
 //예제10
 for i in 0...9 {
@@ -121,3 +21,20 @@ for i in 0...9 {
         totalStars = ""
     }
 }
+
+// MARK: - for 예제 함수 사용버전
+func isClapNumber(_ number: Int) -> Bool {
+    let digits = String(number).compactMap { Int(String($0)) } //문자열의 각 자릿수를 정수 배열로 반환
+    return digits.contains(3) || digits.contains(6) || digits.contains(9)
+    
+}
+for number in 0...99 {
+    if isClapNumber(number) {
+        let clapCount = String(number).filter { $0 == "3" || $0 == "6" || $0 == "9"}.count //필터링 조건에 맞는 문자열 개수 받기
+        let clapString = String(repeating: "*", count: clapCount)
+        print("\(number)\(clapString)")
+    } else {
+        print(number)
+    }
+}
+
