@@ -7,34 +7,17 @@
 
 import Foundation
 
-//예제10
-for i in 0...9 {
-    for j in 0...9 {
-        var totalStars = ""
-        if i == 3 || i == 6 || i == 9{
-            totalStars += "*"
-        }
-        if j == 3 || j == 6 || j == 9 {
-            totalStars += "*"
-        }
-        print(String(i) + String(j) + totalStars)
-        totalStars = ""
+// MARK: - 재귀호출로 삼육구 함수 작성하기
+func is369(cnt: Int) -> String {
+    let a = cnt / 10
+    let b = cnt % 10
+    let str: String = (b % 3 == 0) && (b != 0) ? "*" : ""
+    if a == 0 { //일의 자리일 경우 최종 문자열만 리턴!
+        return str
     }
+    return str + is369(cnt: a)
 }
 
-// MARK: - for 예제 함수 사용버전
-func isClapNumber(_ number: Int) -> Bool {
-    let digits = String(number).compactMap { Int(String($0)) } //문자열의 각 자릿수를 정수 배열로 반환
-    return digits.contains(3) || digits.contains(6) || digits.contains(9)
-    
+for cnt in 100...200 {
+    print(String(cnt), is369(cnt: cnt))
 }
-for number in 0...99 {
-    if isClapNumber(number) {
-        let clapCount = String(number).filter { $0 == "3" || $0 == "6" || $0 == "9"}.count //필터링 조건에 맞는 문자열 개수 받기
-        let clapString = String(repeating: "*", count: clapCount)
-        print("\(number)\(clapString)")
-    } else {
-        print(number)
-    }
-}
-
