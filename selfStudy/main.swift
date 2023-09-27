@@ -6,114 +6,130 @@
 //
 
 import Foundation
+//MARK: - 배열 예제
+func solution(num1: Int, num2: Int) -> Int {
+    let ddaroAB = Int("\(num1)\(num2)")!
+    let subAB = 2 * num1 * num2
 
-// MARK: - 함수 예제1
-//func addNumber(number1: Int, number2: Int) {
-//    print("연산결과:", number1 + number2)
-//}
-//
-//let number1 = input(message: "1번째 수: ")
-//let number2 = input(message: "2번째 수: ")
-//
-//addNumber(number1: number1, number2: number2)
-
-// MARK: - 함수 예제2
-//func largeNumbers(number1: Int, number2: Int) {
-//    if number1 > number2 {
-//        print("큰 수 확인: ", number1)
-//    } else if number1 < number2 {
-//        print("큰 수 확인: ", number2)
-//    } else {
-//        print("큰 수 확인: 0")
-//    }
-//}
-//
-//let number1 = input(message: "1번째 수: ")
-//let number2 = input(message: "2번째 수: ")
-//
-//largeNumbers(number1: number1, number2: number2)
-
-// MARK: - 함수 예제3
-//func close10(number1: Int, number2: Int) {
-//    let number1Result = (10-number1 < 0) ? number1 - 10 : 10 - number1
-//    let number2Result = (10-number2 < 0) ? number2 - 10 : 10 - number2
-//
-//    if number1Result > number2Result {
-//        print("10에 가까운 수: ", number2)
-//    } else if number1Result < number2Result {
-//        print("10에 가까운 수: ", number1)
-//    } else {
-//        print("10에 가까운 수: 0")
-//    }
-//}
-//
-//let number1 = input(message: "1번째 수: ")
-//let number2 = input(message: "2번째 수: ")
-//close10(number1: number1, number2: number2)
-
-// MARK: - 함수 예제4 - while문 사용
-//func powerN(base: Int, n: Int) {
-//    var count = 0
-//    var result = 1
-//    while true {
-//        result *= base
-//        count += 1
-//        if count == n {
-//            break
-//        }
-//    }
-//    print("결과 확인: ", result)
-//}
-//
-//let number1 = input(message: "1번째 수: ")
-//let number2 = input(message: "2번째 수: ")
-//powerN(base: number1, n: number2)
-
-
-// MARK: - 함수 예제5
-//func getAbsoluteValue(num1: Int, num2: Int) {
-//    let result = (num1 - num2 < 0) ? num2 - num1 : num1 - num2
-//    print("결과 확인: ", result)
-//}
-//
-//let number1 = input(message: "1번째 수: ")
-//let number2 = input(message: "2번째 수: ")
-//getAbsoluteValue(num1: number1, num2: number2)
-
-// MARK: - 함수 예제6
-//func isDivide(_ num1: Int, to num2: Int) {
-//    if num1 % num2 == 0 {
-//        print("결과 확인: true")
-//    } else {
-//        print("결과 확인: flase")
-//    }
-//}
-//let number1 = input(message: "1번째 수: ")
-//let number2 = input(message: "2번째 수: ")
-//isDivide(_ : number1, to: number2)
-
-// MARK: - 함수 예제7
-var dividedNumber:[Int] = []
-func getDivisor(number: Int) -> Array<Int> {
-    var dividedNumber:[Int] = []
-    print("\(number)의 약수: ", terminator: "")
-    for i in 1...number {
-        if number % i == 0 {
-            dividedNumber.append(i)
-        }
+    if ddaroAB >= subAB {
+        return ddaroAB
+    } else {
+        return subAB
     }
-    return dividedNumber
 }
 
-// MARK: - 함수 예제8
-func  getSumOfDivisors(numberArray: [Int]) {
-    print("\(number)의 약수의 합: ", terminator: "")
-    var total = 0
-    //print(numberArray.reduce(0, +))
-    print(numberArray.reduce(0){ $0 + $1 })
+let result = solution(num1: 1, num2: 23)
+print(result)
+
+//예제 1
+//1
+var numbers: Array<Int> = []
+//2
+var numbers = [Int](repeating: 0, count: 10)
+
+//3
+for i in 0..<numbers.count {
+    numbers[i] = Int.random(in: 1...20)
 }
 
-let number = input(message: "정수를 입력하시오: ")
-dividedNumber = getDivisor(number: number)
-print(dividedNumber.map( {String($0)} ).joined(separator: ", ")) //예제7
-getSumOfDivisors(numberArray: dividedNumber) //예제8
+var total = 0
+for i in 0..<numbers.count {
+    print(numbers[i], terminator: " ")
+    total += numbers[i]
+}
+
+//예제2
+var array: [Int] = [1, 2, 3, 4, 5, 6]
+array = array.filter{ $0 % 2 == 0}
+print(array)
+
+//예제3
+var array: [Int] = [1, 2, 3, 4, 5, 6]
+var newArray: [Int] = []
+
+for i in 0..<array.count {
+    if array[i] % 2 != 0 {
+        newArray.append(array[i])
+    }
+}
+print("array에 들어있는 홀수는 \(newArray)이며, 총 \(newArray.count)개 입니다.")
+
+//예제4
+var array: [Int] = [20, 12, 31, 4, 5, 35, 6]
+array = array.sorted()
+print("가장 큰 값은 \(array[array.count - 1])입니다. ")
+
+//예제5
+var array: [Int] = [20, 12, 31, 4, 5, 35, 6]
+
+array = array.sorted() //방법1
+
+for _ in 0..<array.count { //방법2
+    for i in 0..<array.count - 1 {
+        if array[i] > array[i + 1] {
+            var temp = array[i]
+            array[i] = array[i + 1]
+            array[i + 1] = temp
+         }
+    }
+}
+print("가장 작은 값은 \(array[0])입니다. ")
+
+//예제6
+print("=== 수박 게임 시작! ===")
+let numbers = input(message: "숫자를 입력해주세요: ")
+var watermelon: String = ""
+for i in 1...numbers {
+    if i % 2 == 0 {
+        watermelon += "박"
+    } else {
+        watermelon += "수"
+    }
+}
+print(watermelon)
+
+//예제7
+var array = [Int](repeating: 0, count: 10)
+var newArray: [Int] = []
+
+for i in 0..<10 {
+   array[i] = input(message: "\(i+1)번째 정수 입력: ")
+}
+
+for i in 0..<10 {
+    if array[i] % 3 == 0 {
+        newArray.append(array[i])
+    }
+}
+
+print("3의 배수: \(newArray)")
+
+//예제8
+var answers = [1, 1, 4, 2, 3]
+var results: String = ""
+var totalScores: Int = 0
+
+print("== 채점하기! ==")
+print("답을 입력하세요")
+
+for i in 0..<5 {
+    if answers[i] == input(message: "\(i + 1)번 답: ") {
+        results += "O "
+        totalScores += 5
+    } else {
+        results += "X "
+    }
+}
+
+print(results, "총점: ", totalScores)
+
+//array 예제9
+func draxIndexStars() {
+    var arrayName = [Int](repeating: 0, count: Int.random(in: 1...10))
+    print("\(arrayName.count):", (String)(repeating: "*", count: arrayName.count))
+}
+
+draxIndexStars()
+draxIndexStars()
+draxIndexStars()
+draxIndexStars()
