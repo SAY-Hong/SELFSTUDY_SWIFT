@@ -83,7 +83,7 @@ print(postfixNotation("2 3 + 4 *"))*/
 print(infixNotation("( 2 + 3 ) * 4"))*/
 
 //MARK: -스택 예제3 (답안 ver)
-func infixToPostfix(_ expression: String) -> String {
+/*func infixToPostfix(_ expression: String) -> String {
     // 결과를 저장하는 문자열
     var result = ""
     // 연산자를 저장할 스택
@@ -122,10 +122,10 @@ func infixToPostfix(_ expression: String) -> String {
     return result
 }
 
-print( infixToPostfix("2 + ( ( 4 + 6 ) / 2 )") )  // -> "2 3 + 4 *"
+print( infixToPostfix("2 + ( ( 4 + 6 ) / 2 )") )  // -> "2 3 + 4 *"*/
 
 //MARK: -버블정렬
-var arr = [2, 5, 6, 7, 1, 3, 9, 0]
+//var arr = [2, 5, 6, 7, 1, 3, 9, 0]
 
 func bubbleSort(_ inputArray: [Int]) -> [Int] {
     var arr = inputArray
@@ -141,4 +141,57 @@ func bubbleSort(_ inputArray: [Int]) -> [Int] {
     return arr
 }
 
-print(bubbleSort(arr))
+//print(bubbleSort(arr))
+
+//MARK: -선택정렬
+//var arr = [2, 5, 6, 7, 1, 3, 9, 0]
+
+func selectionSort(_ inputArray: [Int]) -> [Int] {
+    var arr = inputArray
+    for i in 0..<arr.count-1 {
+        var least = i
+        for j in i+1..<arr.count {
+            if(arr[j] < arr[least]){
+                least = j;
+            }
+        }
+        var temp = arr[i]
+        arr[i] = arr[least]
+        arr[least] = temp
+    }
+    return arr
+}
+
+//MARK: -정렬 예제1
+//var song: [String: Int] = ["롤린": 156, "Celebrity": 141, "On The Ground": 35, "LOVE DAY": 94, "밤하늘의 별을": 88]
+class SongInformation {
+    var songName: String
+    var singer: String
+    var count: Int
+    
+    init(songName: String, singer: String, count: Int) {
+        self.songName = songName
+        self.singer = singer
+        self.count = count
+    }
+}
+
+var g1: SongInformation = SongInformation(songName: "롤린", singer: "브레이브걸스", count: 156)
+var g2: SongInformation = SongInformation(songName: "Celebrity", singer: "아이유", count: 141)
+var g3: SongInformation = SongInformation(songName: "On The Ground", singer: "로제", count: 35)
+var g4: SongInformation = SongInformation(songName: "LOVE DAY (2021)", singer: "양요섭, 정은지", count: 94)
+var g5: SongInformation = SongInformation(songName: "밤하늘의 별을(2020)", singer: "경서", count: 88)
+var g6: SongInformation = SongInformation(songName: "Dynamite", singer: "방탄소년단", count: 111)
+
+var songArray: [SongInformation] = [g1, g2, g3, g4, g5, g6]
+var songCount: [Int] = []
+songArray = songArray.sorted(by: {$0.count > $1.count})
+
+
+for i in 0..<songArray.count {
+    print("\(i + 1)위 곡명: \(songArray[i].songName), 가수:\(songArray[i].singer), 스트리밍 횟수:\(songArray[i].count)")
+}
+
+
+
+
