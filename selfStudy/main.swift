@@ -85,7 +85,7 @@ var n = 10
 print(fibbo(_ : n))*/
 
 //MARK: -퀵 정렬
-func quicksort(_ a: [Int]) -> [Int]{
+/*func quicksort(_ a: [Int]) -> [Int]{
     //guard - let으로 a의 원소 개수가 0개 보호
     guard let pivot = a.first else {
         return []
@@ -99,4 +99,29 @@ func quicksort(_ a: [Int]) -> [Int]{
     return quicksort(left) + [pivot] + quicksort(right)
 }
 
-print(quicksort([2,7,4,5,6,9,0]))
+print(quicksort([2,7,4,5,6,9,0]))*/
+
+//MARK: -퀵 정렬(for문으로 작성하기)
+func quickSort(_ a: [Int]) -> [Int] {
+    var pivot: Int = 0
+    
+    if a.count == 0 {
+        return []
+    } else {
+        pivot = a[a.count / 2]
+    }
+    var left: [Int] = []
+    var right: [Int] = []
+    
+    for i in 0...a.count - 1 {
+        if a[i] < pivot {
+            left.append(a[i])
+        }
+        if a[i] > pivot {
+            right.append(a[i])
+        }
+    }
+    return quickSort(left) + [pivot] + quickSort(right)
+}
+
+print(quickSort([2,7,4,5,6,9,0]))
