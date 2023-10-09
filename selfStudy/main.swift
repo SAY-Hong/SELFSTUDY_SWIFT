@@ -127,15 +127,14 @@ print(quicksort([2,7,4,5,6,9,0]))*/
 print(quickSort([2,7,4,5,6,9,0]))*/
 
 //MARK: append와 insert
-var array = [Int]()
-array.insert(1, at: 0)
-array.insert(2, at: 0)
-array.insert(3, at: 2)
-array.insert(4, at: 3)
-print(array)
+var array = [1, 2, 2, 3]
+array.forEach { value in
+    print(value)
+}
 
-var array2 = [Int]()
-array2.append(1)
-array2.append(2)
-print(array2)
+print("==========")
+array.forEach {
+    print($0)
+}
+
 
