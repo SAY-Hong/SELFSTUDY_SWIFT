@@ -127,7 +127,7 @@ print(quicksort([2,7,4,5,6,9,0]))*/
 print(quickSort([2,7,4,5,6,9,0]))*/
 
 //MARK: append와 insert
-var array = [1, 2, 2, 3]
+/*var array = [1, 2, 2, 3]
 array.forEach { value in
     print(value)
 }
@@ -135,6 +135,18 @@ array.forEach { value in
 print("==========")
 array.forEach {
     print($0)
+}*/
+
+import Foundation
+
+let s1 = "AbcDEfG"
+ 
+for i in s1 {
+    if i.isUppercase {
+        print(i.lowercased(), terminator: "")
+    } else {
+        print(i.uppercased(), terminator: "")
+    }
 }
 
-
+print(s1)

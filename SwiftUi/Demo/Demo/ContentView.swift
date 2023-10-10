@@ -69,9 +69,9 @@ import SwiftUI
     }
 }*/
 
-/*struct ContentView: View {
-    @State private var gulCount = ""
-    @State private var storageCount = ""
+struct ContentView: View {
+    @State private var gulCount: Int?
+    @State private var storageCount: Int?
     @State private var result: Int?
     
     var body: some View {
@@ -81,7 +81,7 @@ import SwiftUI
         
             HStack{
                 Text("🍊").font(.system(size: 100))
-                TextField("귤의 개수는?", text: $gulCount)
+                TextField("귤의 개수는?", value: $gulCount, format: .number)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .onChange(of: gulCount) { oldValue, newValue in
                         result = getBox(newValue, storageCount)
@@ -93,7 +93,7 @@ import SwiftUI
             
             HStack{
                 Text("📥").font(.system(size: 100))
-                TextField("박스에 들어갈 수 있는 귤의 개수는?", text: $storageCount)
+                TextField("박스에 들어갈 수 있는 귤의 개수는?", value: $storageCount, format: .number)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .onChange(of: storageCount) { oldValue, newValue in
                         result = getBox(gulCount, newValue)
@@ -114,9 +114,10 @@ import SwiftUI
         }
         
     }
-    func getBox(_ count: String, _ boxCount: String) -> (Int) {
-        let gul = Int(gulCount) ?? 0
-        let box = Int(storageCount) ?? 0
+    func getBox(_ count: Int?, _ boxCount: Int?) -> Int {
+        guard let gul = count, let box = boxCount else {
+            return 0
+        }
         
         if gul % box != 0 && box != 0 {
             //result = gul / box + 1
@@ -132,9 +133,9 @@ import SwiftUI
         }
         return 0
     }
-}*/
+}
 
-struct ContentView: View {
+/*struct ContentView: View {
     @State private var swiftScore: Int?
     @State private var iosScore: Int?
     @State private var webScore: Int?
@@ -178,7 +179,7 @@ struct ContentView: View {
         }
         return (swiftScore + iosScore + webScore, Double(swiftScore + iosScore + webScore)/3)
     }
-}
+}*/
 
 #Preview {
     ContentView()
