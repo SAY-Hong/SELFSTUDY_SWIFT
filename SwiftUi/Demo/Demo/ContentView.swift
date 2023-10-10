@@ -86,8 +86,6 @@ struct ContentView: View {
                     .padding(1)
                     .background(Color.secondary)
                     .padding(10)
-            }.onSubmit {
-                getBox()
             }
             
             HStack{
@@ -97,14 +95,12 @@ struct ContentView: View {
                     .padding(1)
                     .background(Color.secondary)
                     .padding(10)
-            }.onSubmit {
-                getBox()
             }
             
-            /*Button(action: getBox, label: {
+            Button(action: getBox, label: {
                 Text("필요한 박스의 개수는?")
                     .foregroundColor(.white)
-            }).padding(10).background(Color.accentColor)*/
+            }).padding(10).background(Color.accentColor)
             
             Text("필요한 박스의 수: \(result)(Box)").font(.system(size: 20)).padding()
         }
