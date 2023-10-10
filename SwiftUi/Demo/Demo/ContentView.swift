@@ -69,20 +69,23 @@ import SwiftUI
     }
 }*/
 
-struct ContentView: View {
+/*struct ContentView: View {
     @State private var gulCount = ""
     @State private var storageCount = ""
-    @State private var result = 0
+    @State private var result: Int?
     
     var body: some View {
         VStack{
             Text("📦📦📦📦📦")
             Text("박스의 개수를 구해보자!").font(.title)
-    
+        
             HStack{
                 Text("🍊").font(.system(size: 100))
                 TextField("귤의 개수는?", text: $gulCount)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .onChange(of: gulCount) { oldValue, newValue in
+                        result = getBox(newValue, storageCount)
+                    }
                     .padding(1)
                     .background(Color.secondary)
                     .padding(10)
@@ -92,28 +95,88 @@ struct ContentView: View {
                 Text("📥").font(.system(size: 100))
                 TextField("박스에 들어갈 수 있는 귤의 개수는?", text: $storageCount)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .onChange(of: storageCount) { oldValue, newValue in
+                        result = getBox(gulCount, newValue)
+                    }
                     .padding(1)
                     .background(Color.secondary)
                     .padding(10)
             }
             
-            Button(action: getBox, label: {
+            /*Button(action: getBox, label: {
                 Text("필요한 박스의 개수는?")
                     .foregroundColor(.white)
-            }).padding(10).background(Color.accentColor)
+            }).padding(10).background(Color.accentColor)*/
             
-            Text("필요한 박스의 수: \(result)(Box)").font(.system(size: 20)).padding()
+            Text("필요한 박스의 수: \(result ?? 0)(Box)")
+                .font(.system(size: 20))
+                .padding()
         }
+        
     }
-    func getBox() {
+    func getBox(_ count: String, _ boxCount: String) -> (Int) {
         let gul = Int(gulCount) ?? 0
         let box = Int(storageCount) ?? 0
         
-        if gul % box != 0 {
-            result = gul / box + 1
-        } else {
-            result = gul / box
+        if gul % box != 0 && box != 0 {
+            //result = gul / box + 1
+            return (gul / box + 1)
         }
+        if gul % box == 0 && box != 0 {
+            //result = gul / box
+            return (gul / box)
+        }
+        
+        if box == 0 {
+            return 0
+        }
+        return 0
+    }
+}*/
+
+struct ContentView: View {
+    @State private var swiftScore: Int?
+    @State private var iosScore: Int?
+    @State private var webScore: Int?
+    @State private var results: (Int, Double)?
+    
+    var body: some View {
+        VStack{
+            Text("📖").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            Text("제1회 역량평가 결과 알아보기").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).bold()
+            HStack{
+                Text("✍️제1과목: ").font(.system(size: 20)).bold()
+                TextField("Swift 점수 입력: ", value: $swiftScore, format: .number)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+            
+            HStack{
+                Text("✍️제2과목: ").font(.system(size: 20)).bold()
+                TextField("IOS 점수 입력: ", value: $iosScore, format: .number)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+            
+            HStack{
+                Text("✍️제3과목: ").font(.system(size: 20)).bold()
+                TextField("Web 점수 입력: ", value: $webScore, format: .number)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+            
+            Button(action: { results = checkScore() } , label: {
+                Text("나의 시험 결과 확인하기")
+            }).padding()
+            
+            Text("점수 합계: \(results?.0 ?? 0)")
+            Text("점수 평균: \(results?.1 ?? 0)")
+            
+        }
+
+    }
+    func checkScore() -> (Int, Double) {
+        guard let swiftScore = swiftScore, let iosScore = iosScore, let webScore = webScore else {
+            return (0, 0.0)
+        }
+        return (swiftScore + iosScore + webScore, Double(swiftScore + iosScore + webScore)/3)
     }
 }
 
