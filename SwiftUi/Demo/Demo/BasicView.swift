@@ -54,10 +54,11 @@ struct BasicView: View {
                 TextField("Input", text: $msg)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .foregroundColor(.black)
-                Button(action: { btnPressed() }, label: {
+                    .frame(width: 200)
+                /*Button(action: { btnPressed() }, label: {
                     Text("Send")
                         .foregroundColor(Color.white)
-                })
+                })*/
             }
             MyStackView()
                 .font(.custom("Copperplate", size: 40))
@@ -109,6 +110,7 @@ struct StandardTitle: ViewModifier {
             .background(Color.white)
             .border(Color.gray, width: 0.2)
             .shadow(color: Color.black, radius: 5, x: 0, y: 5)
+            .padding(20)
     }
 }
 
@@ -139,6 +141,65 @@ class NumberOnly: ObservableObject {
         }
     }
 }
+
+//MARK: 시계 예제
+/*struct ClockView: View {
+    @State private var clock: Int?
+    @State private var result: (Int, Int, Int)?
+    
+    var body: some View {
+        HStack {
+            Text("⏰").padding(30).font(.system(size: 20))
+            TextField("초를 입력해주세요 ", value: $clock, format: .number).font(.system(size: 20))
+            Button(action: { result = changeHour() }, label: {
+                Text("변환하기")
+            }).padding(30)
+        }
+        Text("\(result?.0 ?? 0)시 \(result?.1 ?? 0)분 \(result?.2 ?? 0)초")
+    }
+    func changeHour() -> (Int, Int, Int) {
+        guard let time = clock else {
+            return (0, 0, 0)
+        }
+        let hour = time / 3600
+        let min = time % 3600 / 60
+        let second = time % 3600 % 60
+        
+        return (hour, min, second)
+    }
+}*/
+
+/*struct MoneyView: View {
+    @State private var hour: Int?
+    @State private var result: Int = 0
+    var body: some View {
+        HStack {
+            TextField("근무시간 입력하기: ", value: $hour, format: .number).font(.system(size: 20))
+            Button(action: getTotalMoney, label: {
+                Text("급여 확인하기")
+            })
+        }.padding(50)
+        Text("나의 총 급여는 \(result)원 입니다. ")
+    }
+    func getTotalMoney() {
+        guard let hour = hour else {
+            return
+        }
+        
+        let money = 10000
+        let plusMoney: Double = Double(money) * 1.5
+        let totalMoney = (hour - 8) * Int(plusMoney) + 8 * money
+        
+        if hour > 8 {
+            let plusMoney: Double = Double(money) * 1.5
+            let totalMoney = (hour - 8) * Int(plusMoney) + 8 * money
+            
+            result = totalMoney
+        } else {
+            result = hour * 10000
+        }
+    }
+}*/
 #Preview {
     BasicView()
 }

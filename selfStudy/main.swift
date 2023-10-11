@@ -139,7 +139,7 @@ array.forEach {
 
 import Foundation
 
-let s1 = "AbcDEfG"
+/*let s1 = "AbcDEfG"
  
 for i in s1 {
     if i.isUppercase {
@@ -149,4 +149,12 @@ for i in s1 {
     }
 }
 
-print(s1)
+print(s1)*/
+
+let workHour = 9
+let money = 10000
+
+let plusMoney: Double = Double(money) * 1.5
+let totalMoney = (workHour - 8) * Int(plusMoney) + 8 * money
+
+print(totalMoney)
