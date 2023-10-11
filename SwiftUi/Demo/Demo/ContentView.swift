@@ -69,7 +69,7 @@ import SwiftUI
     }
 }*/
 
-struct ContentView: View {
+/*struct ContentView: View {
     @State private var gulCount: Int?
     @State private var storageCount: Int?
     @State private var result: Int?
@@ -133,7 +133,7 @@ struct ContentView: View {
         }
         return 0
     }
-}
+}*/
 
 /*struct ContentView: View {
     @State private var swiftScore: Int?
@@ -180,6 +180,20 @@ struct ContentView: View {
         return (swiftScore + iosScore + webScore, Double(swiftScore + iosScore + webScore)/3)
     }
 }*/
+
+//MARK: 뷰 이동하기
+struct ContentView: View {
+    var body: some View {
+        NavigationView {
+            VStack {
+                NavigationLink(destination: BasicView(), label: {
+                    Text("Next View")
+                        .font(.largeTitle)
+                })
+            }
+        }
+    }
+}
 
 #Preview {
     ContentView()
