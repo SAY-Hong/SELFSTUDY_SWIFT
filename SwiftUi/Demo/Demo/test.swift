@@ -7,41 +7,26 @@
 
 import SwiftUI
 
-struct ContenView: View {
-    @State var showDetail = false
-
+struct TestView: View {
     var body: some View {
-        ZStack {
-            if showDetail {
-                DetailView(showDetail: self.$showDetail)
-            } else {
-                VStack {
-                    Button(action: {
-                        self.showDetail = true
-                    }) {
-                        Text("Show Detail View")
-                    }
-                }
-            }
-        }
-    }
-}
-
-struct DetailView: View {
-    @Binding var showDetail: Bool
-
-    var body: some View {
-        VStack {
-            Text("This is the Detail View")
-            Button(action: {
-                self.showDetail = false
-            }) {
-                Text("Dismiss")
+        //뷰들을 담고 있는 컨테이너의 크기에 따라 저장
+        //
+        GeometryReader { geometry in
+            VStack {
+                Text("GeometryReader")
+                    .font(.largeTitle)
+                    .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+                    .frame(width: geometry.size.width / 2, height: (geometry.size.height / 4) * 3)
+                
+                Text("Goodbye world...")
+                    .font(.largeTitle)
+                    .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+                    .frame(width: geometry.size.width / 3, height: (geometry.size.height / 4))
             }
         }
     }
 }
 
 #Preview {
-    ContenView()
+    TestView()
 }

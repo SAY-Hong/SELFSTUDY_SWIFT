@@ -45,6 +45,9 @@ struct BasicView: View {
                 TextField("Score", value: $score, format: .number)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.decimalPad) //숫자만 강제적으로 입력받게 하는..?
+                /*TextField("Number", text: $num.value)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.decimalPad)*/
                 TextField("Number", text: $num.value)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.decimalPad)
@@ -60,10 +63,10 @@ struct BasicView: View {
                         .foregroundColor(Color.white)
                 })*/
             }
+            
             MyStackView()
                 .font(.custom("Copperplate", size: 40))
-            
-            
+        
             //MARK: 커스텀 컨테이너뷰
             MyVStackView {
                 Text("Hello")
@@ -71,9 +74,13 @@ struct BasicView: View {
                     .font(.headline) //수정도 가능하다.
             }
             
+            //MARK: 레이블뷰
+            Label("Hello!", systemImage: "person.circle")
+                .font(.title)
+            
             //MARK: 레이블 뷰, 아이콘과 텍스트가 나란히 배치
             Label("Welcome", systemImage: "person.circle") //대부분 그냥 아이콘 사용하긴 해
-                .font(.largeTitle)
+                .font(.title)
             Label(
                 title: { Text("Label") },
                 icon: { Circle()
@@ -93,6 +100,15 @@ struct BasicView: View {
 
 //MARK: 하위뷰로 작성하기 - 간단하게 구조를 만들고 싶다! 일때..
 struct MyStackView: View {
+    var body: some View {
+        HStack {
+            Text("name")
+            Text("age")
+        }
+    }
+}
+
+struct StackView: View {
     var body: some View {
         HStack {
             Text("name")
@@ -125,8 +141,8 @@ struct MyVStackView<Content: View>: View {
         VStack(spacing: 10) {
             content()
         }
-        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+        .font(.title)
+        .foregroundColor(.blue)
     }
 }
 
@@ -169,6 +185,7 @@ class NumberOnly: ObservableObject {
     }
 }*/
 
+
 /*struct MoneyView: View {
     @State private var hour: Int?
     @State private var result: Int = 0
@@ -200,6 +217,7 @@ class NumberOnly: ObservableObject {
         }
     }
 }*/
+
 #Preview {
     BasicView()
 }

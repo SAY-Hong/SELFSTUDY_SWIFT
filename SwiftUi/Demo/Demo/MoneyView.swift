@@ -78,6 +78,7 @@ struct MoneyView: View {
             moneyState = .much
             roofi = "좋아!"
         }
+        
     }
 }
 

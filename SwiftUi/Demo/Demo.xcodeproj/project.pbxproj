@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B10A60262AD7CE1E00C15204 /* EvenOrOddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10A60252AD7CE1E00C15204 /* EvenOrOddView.swift */; };
 		B1436A182AD4EBE5000D33E8 /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1436A172AD4EBE5000D33E8 /* DemoApp.swift */; };
 		B1436A1A2AD4EBE5000D33E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1436A192AD4EBE5000D33E8 /* ContentView.swift */; };
 		B1436A1C2AD4EBE6000D33E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1436A1B2AD4EBE6000D33E8 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B10A60252AD7CE1E00C15204 /* EvenOrOddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenOrOddView.swift; sourceTree = "<group>"; };
 		B1436A142AD4EBE5000D33E8 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1436A172AD4EBE5000D33E8 /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
 		B1436A192AD4EBE5000D33E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				B1436A1B2AD4EBE6000D33E8 /* Assets.xcassets */,
 				B1436A1D2AD4EBE6000D33E8 /* Preview Content */,
 				B1AAA78A2AD684170004D04C /* test.swift */,
+				B10A60252AD7CE1E00C15204 /* EvenOrOddView.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				B1AAA7852AD680F50004D04C /* GulBoxView.swift in Sources */,
 				B1436A182AD4EBE5000D33E8 /* DemoApp.swift in Sources */,
 				B1AAA78B2AD684170004D04C /* test.swift in Sources */,
+				B10A60262AD7CE1E00C15204 /* EvenOrOddView.swift in Sources */,
 				B1AAA7892AD681FA0004D04C /* ScoreView.swift in Sources */,
 				B1AAA7872AD681810004D04C /* CalculateView.swift in Sources */,
 			);
