@@ -161,7 +161,7 @@ print(totalMoney)*/
 
 
 //MARK: '세 개의 구분자'
-var arr: [String] = []
+/*var arr: [String] = []
 var arrIndex: [Int] = []
 var total = ""
 var string = "cababx"
@@ -195,6 +195,32 @@ for i in 1..<arrIndex.count {
 
 if result.isEmpty {
     result.append("EMPTY")
+}
+
+print(result)*/
+
+//MARK: 세 개의 구분자 ver2
+var result: [String] = []
+var words = ""
+var string = "baconlettucetomato"
+
+for str in string {
+    if "abc".contains(str) {
+        if !words.isEmpty {
+            result.append(words)
+            words = ""
+        }
+    } else {
+        words += String(str)
+    }
+}
+
+if !words.isEmpty {
+    result.append(words)
+}
+
+if result.isEmpty {
+    result = ["EMPTY"]
 }
 
 print(result)
