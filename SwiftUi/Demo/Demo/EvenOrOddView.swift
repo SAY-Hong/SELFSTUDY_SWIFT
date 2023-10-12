@@ -24,16 +24,18 @@ struct EvenOrOddView: View {
                     .frame(minWidth: 50, maxWidth: 250, minHeight: 100, maxHeight: 100)
                 Button(action: { result = checkNum() }) {
                     Text("CHECK")
-                        .padding()
-                        .border(Color.black)
+                        //.padding()
+                        //.border(Color.black)
                         .frame(minHeight: 50, maxHeight: 50)
                         
-                }.buttonStyle(.borderedProminent)
+                }.buttonStyle(BorderedButtonStyle())
             }
             if clickCheck == 1 {
-                Text("\(result?.0 ?? 0)은/는 \(result?.1 ?? "")입니다.")
+                Text("\(result?.0 ?? 0) is \(result?.1 ?? "").")
+                    .modifier(StandardResulttext())
             } else {
-                Text(" ")
+                Text("Even or Odd")
+                    .modifier(StandardResulttext())
             }
         }
     }
@@ -45,13 +47,20 @@ struct EvenOrOddView: View {
         clickCheck = 1
         
         if number % 2 == 0 {
-            return (number, "짝수")
+            return (number, "Even")
         } else {
-            return (number, "홀수")
+            return (number, "Odd")
         }
     }
 }
-
+//MARK: 커스텀 수정자
+struct StandardResulttext: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 25, design: .serif))
+            .padding(20)
+    }
+}
 #Preview {
     EvenOrOddView()
 }

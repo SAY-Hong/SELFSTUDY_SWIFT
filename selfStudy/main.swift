@@ -151,10 +151,54 @@ for i in s1 {
 
 print(s1)*/
 
-let workHour = 9
+/*let workHour = 9
 let money = 10000
 
 let plusMoney: Double = Double(money) * 1.5
 let totalMoney = (workHour - 8) * Int(plusMoney) + 8 * money
 
-print(totalMoney)
+print(totalMoney)*/
+
+
+//MARK: '세 개의 구분자'
+var arr: [String] = []
+var arrIndex: [Int] = []
+var total = ""
+var string = "cababx"
+var result: [String] = []
+
+for i in string {
+    arr.append(String(i))
+}
+
+for i in 0...arr.count - 1 {
+    if arr[i] == "a" || arr[i] == "b" || arr[i] == "c"{
+        arrIndex.append(i)
+    }
+}
+
+if !arrIndex.contains(arr.count - 1) {
+    arrIndex.append(arr.count)
+}
+
+for i in 1..<arrIndex.count {
+    total = ""
+    for z in 0..<arr.count {
+        if z > arrIndex[i - 1] && z < arrIndex[i] {
+            total += arr[z]
+        }
+    }
+    if total != "" {
+        result.append(total)
+    }
+}
+
+if result.isEmpty {
+    result.append("EMPTY")
+}
+
+print(result)
+
+
+
+
