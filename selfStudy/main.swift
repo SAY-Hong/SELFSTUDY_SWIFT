@@ -200,7 +200,7 @@ if result.isEmpty {
 print(result)*/
 
 //MARK: 세 개의 구분자 ver2
-var result: [String] = []
+/*var result: [String] = []
 var words = ""
 var string = "baconlettucetomato"
 
@@ -223,8 +223,135 @@ if result.isEmpty {
     result = ["EMPTY"]
 }
 
-print(result)
+print(result)*/
+
+//MARK: 클로저
+/*func functionA() -> (() -> (Int)) {
+    var count = 0
+    func functionB() -> Int {
+        return count + 10
+    }
+     return functionB
+}
+
+var a = functionA()
+
+print(a)*/
+
+//MARK: 후행 클로저
+//뒤에 클로저를 작성하겠다.
+//함수의 인수이지만 함수 호출의 소괄호 다음에 작성하는 것을 말한다.
 
 
+//후행 클로저하다가 갑자기 프로토콜로 넘어온다구요?
+//MARK: 프로토콜.. 갑자기..?
+//타입이 구현해야하는 요구사항을 정의하는 규칙들의 집합. -> 필수 요구사항을 정의하는 것.
+//클래스가 반드시 포함해야하는 메서드와 프로퍼티를 정의.
+
+//규칙을 받아서 써라! 라는 의미인 프로토콜
+/*protocol MessageBuilder {
+    var name: String {
+        get //단축표현으로 사용. -> 값을 담을 수 있는 용도다 라는 것을 명시해준다.
+    }
+    func buildMessage() -> String
+}
+
+class MyClass: MessageBuilder {
+    var name: String
+    init(name: String) {
+        self.name = name
+    }
+    func buildMessage() -> String {
+        return name
+    }
+}
+
+let a: MyClass = MyClass(name: "홍세희")
+print(a.name)*/
+
+//TODO: 쓰레드 공부?
+//MARK: 프로퍼티 래퍼
+struct Address {
+    private var cityname = ""
+    
+    var city: String {
+        get { cityname }
+        set { cityname = newValue.uppercased() }
+    }
+}
+
+var address = Address()
+address.city = "London"
+print( address.city )
+
+@propertyWrapper
+struct FixCase {
+    private(set) var value: String = ""
+    
+    var wrappedValue: String {
+        get { value }
+        set { value = newValue.uppercased()}
+    }
+    
+    init(value: String) {
+        self.value = value
+    }
+//    init(wrappedValue initValue: String) {
+//        self.wrappedValue = initValue
+//    }
+    
+}
 
 
+struct Contact {
+    @FixCase var name: String
+    @FixCase var city: String
+}
+
+var contract = Contact(name: "pArk", city: "sEouL")
+print(contract.name, contract.city)
+
+/*func solution(_ num_list:[Int]) -> Int {
+    var num = 0
+    var num1 = 1
+    var result: Int = 0
+    
+    for i in 0..<num_list.count {
+        if 11 <= num_list.count {
+            num += num_list[i]
+            result = num
+        } else {
+            num1 *= num_list[i]
+            result = num1
+        }
+        
+    }
+    return result
+}
+
+print(solution([2, 3, 4, 5]))*/
+
+/*var num_list = [2, 3, 4, 5]
+var num = 0
+var num1 = 1
+
+for i in 0..<num_list.count {
+    if 11 <= num_list.count {
+        num += num_list[i]
+    } else {
+        num1 *= num_list[i]
+    }
+    
+    if 11 <= num_list.count {
+        return num
+    } else {
+        return num1
+    }
+}*/
+/*var a = [2, 3, 4, 5, 6]
+//var b = a.reduce(0) { $0 * $1 }
+var b = a.reduce(1) { partialResult, i in
+    partialResult * i
+}
+
+print(b)*/

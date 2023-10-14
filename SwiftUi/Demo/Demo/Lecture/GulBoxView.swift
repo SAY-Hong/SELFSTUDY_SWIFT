@@ -50,6 +50,7 @@ struct GulBoxView: View {
             Text("필요한 박스의 수: \(result ?? 0)(Box)")
                 .font(.system(size: 20))
                 .padding()
+                .frame(width: 300, alignment: .leading)
         }
         
     }
