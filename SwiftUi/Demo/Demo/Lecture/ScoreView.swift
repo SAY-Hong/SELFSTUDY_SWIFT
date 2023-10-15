@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ScoreView: View {
-    @State private var swiftScore: Int?
+    @State private var swiftScore: Int = 0
     @State private var iosScore: Int?
     @State private var webScore: Int?
     @State private var results: (Int, Double)?
