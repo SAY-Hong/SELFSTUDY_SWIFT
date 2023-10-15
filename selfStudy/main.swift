@@ -271,7 +271,7 @@ print(a.name)*/
 
 //TODO: 쓰레드 공부?
 //MARK: 프로퍼티 래퍼
-struct Address {
+/*struct Address {
     private var cityname = ""
     
     var city: String {
@@ -309,7 +309,7 @@ struct Contact {
 }
 
 var contract = Contact(name: "pArk", city: "sEouL")
-print(contract.name, contract.city)
+print(contract.name, contract.city)*/
 
 /*func solution(_ num_list:[Int]) -> Int {
     var num = 0
@@ -355,3 +355,29 @@ var b = a.reduce(1) { partialResult, i in
 }
 
 print(b)*/
+
+/*var num = "123"
+var num1 = Array(num)
+var result = 0*/
+
+
+func solution(_ arr:[Int], _ query:[Int]) -> [Int] {
+    var arr = arr
+    for i in 0..<query.count {
+        if(i % 2 == 0){
+            var originCount = arr.count
+            for _ in 1..<(originCount - query[i]) {
+                arr.remove(at: arr.count - 1)
+                print("짝",arr)
+            }
+        }else{
+            for _ in 0..<query[i] {
+                arr.remove(at: 0)
+                print("홀",arr)
+            }
+        }
+    }
+    return arr
+}
+
+print(solution([0, 1, 2, 3, 4, 5], [4, 1, 2]))
