@@ -14,6 +14,9 @@
 		B1436A1C2AD4EBE6000D33E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1436A1B2AD4EBE6000D33E8 /* Assets.xcassets */; };
 		B1436A1F2AD4EBE6000D33E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1436A1E2AD4EBE6000D33E8 /* Preview Assets.xcassets */; };
 		B16C95FC2AD6416900CBA2F5 /* BasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16C95FB2AD6416900CBA2F5 /* BasicView.swift */; };
+		B16EF8202ADCC5DF002F5FAD /* p215View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16EF81F2ADCC5DF002F5FAD /* p215View.swift */; };
+		B16EF8222ADCD6E4002F5FAD /* UIeample1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16EF8212ADCD6E4002F5FAD /* UIeample1.swift */; };
+		B16EF8242ADCE6E3002F5FAD /* Uiexample2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16EF8232ADCE6E3002F5FAD /* Uiexample2.swift */; };
 		B1AAA77F2AD66BE90004D04C /* MoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AAA77E2AD66BE90004D04C /* MoneyView.swift */; };
 		B1AAA7852AD680F50004D04C /* GulBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AAA7842AD680F50004D04C /* GulBoxView.swift */; };
 		B1AAA7872AD681810004D04C /* CalculateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AAA7862AD681810004D04C /* CalculateView.swift */; };
@@ -33,6 +36,9 @@
 		B1436A1B2AD4EBE6000D33E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1436A1E2AD4EBE6000D33E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B16C95FB2AD6416900CBA2F5 /* BasicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicView.swift; sourceTree = "<group>"; };
+		B16EF81F2ADCC5DF002F5FAD /* p215View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p215View.swift; sourceTree = "<group>"; };
+		B16EF8212ADCD6E4002F5FAD /* UIeample1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIeample1.swift; sourceTree = "<group>"; };
+		B16EF8232ADCE6E3002F5FAD /* Uiexample2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uiexample2.swift; sourceTree = "<group>"; };
 		B1AAA77E2AD66BE90004D04C /* MoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyView.swift; sourceTree = "<group>"; };
 		B1AAA7842AD680F50004D04C /* GulBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GulBoxView.swift; sourceTree = "<group>"; };
 		B1AAA7862AD681810004D04C /* CalculateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateView.swift; sourceTree = "<group>"; };
@@ -104,6 +110,9 @@
 				B1AAA78A2AD684170004D04C /* test.swift */,
 				B10A60252AD7CE1E00C15204 /* EvenOrOddView.swift */,
 				B1AC46352AD92BED00F05CE7 /* PropertyWrappView.swift */,
+				B16EF81F2ADCC5DF002F5FAD /* p215View.swift */,
+				B16EF8212ADCD6E4002F5FAD /* UIeample1.swift */,
+				B16EF8232ADCE6E3002F5FAD /* Uiexample2.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -186,12 +195,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B16EF8202ADCC5DF002F5FAD /* p215View.swift in Sources */,
 				B16C95FC2AD6416900CBA2F5 /* BasicView.swift in Sources */,
 				B1AAA77F2AD66BE90004D04C /* MoneyView.swift in Sources */,
 				B1436A1A2AD4EBE5000D33E8 /* ContentView.swift in Sources */,
 				B1AAA7852AD680F50004D04C /* GulBoxView.swift in Sources */,
 				B1FDEB882AD8F6DB005DF25A /* SwiftUIView.swift in Sources */,
 				B1436A182AD4EBE5000D33E8 /* DemoApp.swift in Sources */,
+				B16EF8242ADCE6E3002F5FAD /* Uiexample2.swift in Sources */,
+				B16EF8222ADCD6E4002F5FAD /* UIeample1.swift in Sources */,
 				B123637F2ADA90DB0038E87C /* StateBindingView.swift in Sources */,
 				B1AC46362AD92BED00F05CE7 /* PropertyWrappView.swift in Sources */,
 				B1AC46382AD982C800F05CE7 /* ObservableView.swift in Sources */,

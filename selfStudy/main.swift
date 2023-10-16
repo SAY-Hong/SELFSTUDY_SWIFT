@@ -361,7 +361,7 @@ var num1 = Array(num)
 var result = 0*/
 
 
-func solution(_ arr:[Int], _ query:[Int]) -> [Int] {
+/*func solution(_ arr:[Int], _ query:[Int]) -> [Int] {
     var arr = arr
     for i in 0..<query.count {
         if(i % 2 == 0){
@@ -380,4 +380,6 @@ func solution(_ arr:[Int], _ query:[Int]) -> [Int] {
     return arr
 }
 
-print(solution([0, 1, 2, 3, 4, 5], [4, 1, 2]))
+print(solution([0, 1, 2, 3, 4, 5], [4, 1, 2]))*/
+
+
