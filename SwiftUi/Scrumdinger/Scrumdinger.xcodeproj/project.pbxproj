@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1783D502ADD4100005099EC /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1783D4F2ADD4100005099EC /* SwiftUIView.swift */; };
 		B1BD47FE2ADC0910008C2F7E /* ScrumdingerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BD47FD2ADC0910008C2F7E /* ScrumdingerApp.swift */; };
-		B1BD48002ADC0910008C2F7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BD47FF2ADC0910008C2F7E /* ContentView.swift */; };
 		B1BD48022ADC0911008C2F7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1BD48012ADC0911008C2F7E /* Assets.xcassets */; };
 		B1BD48052ADC0911008C2F7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1BD48042ADC0911008C2F7E /* Preview Assets.xcassets */; };
 		B1C6A4A12ADC186700BE21BE /* page1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C6A4A02ADC186700BE21BE /* page1View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B1783D4F2ADD4100005099EC /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		B1BD47FA2ADC0910008C2F7E /* Scrumdinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrumdinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1BD47FD2ADC0910008C2F7E /* ScrumdingerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumdingerApp.swift; sourceTree = "<group>"; };
 		B1BD47FF2ADC0910008C2F7E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +59,7 @@
 				B1BD48012ADC0911008C2F7E /* Assets.xcassets */,
 				B1BD48032ADC0911008C2F7E /* Preview Content */,
 				B1C6A4A02ADC186700BE21BE /* page1View.swift */,
+				B1783D4F2ADD4100005099EC /* SwiftUIView.swift */,
 			);
 			path = Scrumdinger;
 			sourceTree = "<group>";
@@ -141,7 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1C6A4A12ADC186700BE21BE /* page1View.swift in Sources */,
-				B1BD48002ADC0910008C2F7E /* ContentView.swift in Sources */,
+				B1783D502ADD4100005099EC /* SwiftUIView.swift in Sources */,
 				B1BD47FE2ADC0910008C2F7E /* ScrumdingerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -382,4 +382,117 @@ var result = 0*/
 
 print(solution([0, 1, 2, 3, 4, 5], [4, 1, 2]))*/
 
+//MARK: 프로토콜
+/*protocol SelfIntroduce {
+    var name: String { get }
+    var phone: Int { get }
+    
+    func age()
+}
 
+
+class Hisayhee: SelfIntroduce {
+    var name: String
+    var phone: Int
+    
+    init(name: String, phone: Int) {
+        self.name = name
+        self.phone = phone
+    }
+    
+    func age() {
+         print("\(name)은 23살입니다.")
+    }
+}
+
+//상속
+class HisayHonh: Hisayhee {
+    
+}
+let hong: Hisayhee = Hisayhee(name: "홍세희", phone: 010)
+hong.age()
+
+let honh: HisayHonh = HisayHonh(name: "혼세희", phone: 12)
+honh.age()*/
+
+//상속 예제 5
+class Animal {
+    var name: String?
+    init(name: String? = nil) {
+        self.name = name
+    }
+    
+    func makeSound() {
+        print("각 동물들의 울음소리")
+    }
+}
+
+class Cat: Animal {
+    override func makeSound() {
+        guard let nickname = name else { return print("동물이 입력되지 않았습니다!")}
+        print("\(nickname)은 고양이이고 울음소리는 야옹이다.")
+    }
+}
+
+class Dog: Animal {
+    override func makeSound() {
+        guard let nickname = name else { return print("동물이 입력되지 않았습니다!")}
+        print("\(nickname)은 강아지이고 울음소리는 멍멍이다.")
+    }
+}
+
+let cat: Cat = Cat(name: nil)
+cat.makeSound()
+
+let dog: Dog = Dog(name: "꿈이")
+dog.makeSound()
+
+//상속 예제 6
+/*class Person {
+    var name: String
+    var age: Int
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+    
+    func introduce() {
+        print("저는 \(name)이고 \(age)살 입니다.")
+    }
+    
+}
+
+class Student: Person {
+    var classNumber: Int
+    var gradeNumber: Int
+    
+    init(name: String, age: Int, classNumber: Int, gradeNumber: Int) {
+        self.classNumber = classNumber
+        self.gradeNumber = gradeNumber
+        super.init(name: name, age: age)
+    }
+    
+    override func introduce() {
+        print("저는 \(name)이고, \(age)살 입니다. 저는 \(gradeNumber)학년 \(classNumber)반입니다.")
+    }
+}
+
+class Teacher: Person {
+    var subject: String
+    
+    init(name: String, age: Int, subject: String) {
+        self.subject = subject
+        super.init(name: name, age: age)
+    }
+    
+    override func introduce() {
+        print("저는 \(name)이고, \(age)살 입니다. 저는 \(subject) 선생님입니다. ")
+    }
+}
+
+
+let student: Person = Student(name: "민수", age: 15, classNumber: 2, gradeNumber: 3)
+let teacher: Person = Teacher(name: "영희", age: 25, subject: "수학")
+student.introduce() // 저는 민수이고, 15살입니다. 저는 2학년 3반입니다.
+teacher.introduce() // 저는 영희이고, 25살입니다. 저는 수학 선생님입니다.*/

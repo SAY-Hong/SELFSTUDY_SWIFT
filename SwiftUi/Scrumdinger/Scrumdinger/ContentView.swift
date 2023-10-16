@@ -7,18 +7,21 @@
 
 import SwiftUI
 
+
+//TODO: 네비게이션뷰 따로 더 추가해볼 것
 struct ContentView: View {
     @State private var progressCount: Double = 1.0
     @State private var flag = false
     @State private var content = ""
     var body: some View {
         NavigationStack {
+            Spacer()
             ProgressView(value: progressCount, total: 5).offset(y: -300)
             Text("\(content)")
+            Spacer()
             Button(action: {changePage()}, label: {
                 Text("다음")
             }).buttonStyle(.borderedProminent)
-              .offset(x: -150, y: 300)
               .navigationDestination(isPresented: $flag) {
                   page1View()
               }
