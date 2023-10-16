@@ -15,34 +15,24 @@ struct Uiexample2: View {
                     .padding(.leading, 150)
                     .padding(.trailing, 150)
             }).buttonStyle(.borderedProminent).tint(.teal)*/
+        VStack {
             Button(action: {}, label: {
                 Text("Button")
-                    .padding(.leading, 150)
-                    .padding(.trailing, 150)
-                    .padding(.top, 5)
-                    .padding(.bottom, 5)
-                    .foregroundStyle(Color.white)
+                    .frame(width: 350, height: 30)
             }).background(Color.teal)
               .cornerRadius(5.0)
             Spacer()
             Button(action: {}, label: {
                 Text("Button")
-                    .padding(.leading, 150)
-                    .padding(.trailing, 150)
-                    .foregroundStyle(Color.white)
-                    .padding(.vertical, 300)
+                    .frame(width: 350, height: 600)
             }).background(Color.teal)
               .cornerRadius(5.0)
             Spacer()
             Button(action: {}, label: {
                 Text("Button")
-                    .padding(.leading, 150)
-                    .padding(.trailing, 150)
-                    .padding(.top, 5)
-                    .padding(.bottom, 5)
-                    .foregroundStyle(Color.white)
+                    .frame(width: 350, height: 30)
             }).background(Color.teal)
-              .cornerRadius(5.0)
+                .cornerRadius(5.0)
         }
     }
 }
