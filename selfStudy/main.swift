@@ -415,8 +415,8 @@ hong.age()
 let honh: HisayHonh = HisayHonh(name: "혼세희", phone: 12)
 honh.age()*/
 
-//상속 예제 5
-/*class Animal {
+//MARK: 상속 예제 5
+class Animal {
     var name: String?
     init(name: String? = nil) {
         self.name = name
@@ -445,10 +445,10 @@ let cat: Cat = Cat(name: nil)
 cat.makeSound()
 
 let dog: Dog = Dog(name: "꿈이")
-dog.makeSound()*/
+dog.makeSound()
 
-//상속 예제 6
-/*class Person {
+//MARK: 상속 예제 6
+class Person {
     var name: String
     var age: Int
     
@@ -495,6 +495,6 @@ class Teacher: Person {
 let student: Person = Student(name: "민수", age: 15, classNumber: 2, gradeNumber: 3)
 let teacher: Person = Teacher(name: "영희", age: 25, subject: "수학")
 student.introduce() // 저는 민수이고, 15살입니다. 저는 2학년 3반입니다.
-teacher.introduce() // 저는 영희이고, 25살입니다. 저는 수학 선생님입니다.*/
+teacher.introduce() // 저는 영희이고, 25살입니다. 저는 수학 선생님입니다.
 
 
