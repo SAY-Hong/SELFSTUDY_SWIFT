@@ -11,7 +11,7 @@ import SwiftUI
 struct DemoApp: App {
     var body: some Scene {
         WindowGroup {
-            Uiexample2()
+            UIeample1()
         }
     }
 }
