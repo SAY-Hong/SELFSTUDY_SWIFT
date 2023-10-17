@@ -416,17 +416,18 @@ let honh: HisayHonh = HisayHonh(name: "혼세희", phone: 12)
 honh.age()*/
 
 //MARK: 상속 예제 5
-class Animal {
+/*class Animal {
     var name: String?
+    
     init(name: String? = nil) {
         self.name = name
     }
     
     func makeSound() {
+        //guard let nickname = name else { return print("동물이 입력되지 않았습니다!")}
         print("각 동물들의 울음소리")
     }
 }
-
 class Cat: Animal {
     override func makeSound() {
         guard let nickname = name else { return print("동물이 입력되지 않았습니다!")}
@@ -445,10 +446,10 @@ let cat: Cat = Cat(name: nil)
 cat.makeSound()
 
 let dog: Dog = Dog(name: "꿈이")
-dog.makeSound()
+dog.makeSound()*/
 
 //MARK: 상속 예제 6
-class Person {
+/*class Person {
     var name: String
     var age: Int
     
@@ -495,6 +496,180 @@ class Teacher: Person {
 let student: Person = Student(name: "민수", age: 15, classNumber: 2, gradeNumber: 3)
 let teacher: Person = Teacher(name: "영희", age: 25, subject: "수학")
 student.introduce() // 저는 민수이고, 15살입니다. 저는 2학년 3반입니다.
-teacher.introduce() // 저는 영희이고, 25살입니다. 저는 수학 선생님입니다.
+teacher.introduce() // 저는 영희이고, 25살입니다. 저는 수학 선생님입니다.*/
 
 
+//MARK: 상속 예제7
+/*class Figure {
+    var color: String
+    init(color: String) {
+        self.color = color
+    }
+    
+    func getArea() -> Double {
+        return 0.0
+    }
+}
+
+class Triangle: Figure {
+    var base: Double
+    var height: Double
+    
+    init(color: String, base: Double, height: Double) {
+        self.base = base
+        self.height = height
+        super.init(color: color)
+    }
+    
+    override func getArea() -> Double {
+        return base*height/2
+    }
+    
+}
+
+
+class Rectangle: Figure {
+    var width: Double
+    var length: Double
+    
+    init(color: String, width: Double, length: Double) {
+        self.width = width
+        self.length = length
+        super.init(color: color)
+    }
+    override func getArea() -> Double {
+        return width*length
+    }
+    
+}
+
+let triangle = Triangle(color: "red", base: 3, height: 4)
+let rectangle = Rectangle(color: "blue", width: 5, length: 6)
+print(triangle.getArea()) // 6.0
+print(rectangle.getArea()) // 30.0*/
+
+//MARK: 상속 예제16
+//class Animal {
+//    var name: String
+//    var age: Int
+//    init(name: String, age: Int) {
+//        self.name = name
+//        self.age = age
+//    }
+//    
+//    func cry() {
+//        
+//    }
+//}
+//
+//class Cat: Animal {
+//    var meow: String
+//    init(name: String, age: Int, meow: String) {
+//        self.meow = meow
+//        super.init(name: name, age: age)
+//    }
+//    override func cry() {
+//        print("\(name)이(가) \(meow)라고 울어요.")
+//    }
+//}
+//
+//class Dog: Animal {
+//    var bark: String
+//    init(name: String, age: Int, bark: String) {
+//        self.bark = bark
+//        super.init(name: name, age: age)
+//    }
+//    override func cry() {
+//        print("\(name)이(가) \(bark)라고 짖어요.")
+//    }
+//}
+//
+//class Duck: Animal {
+//    var bark: String
+//    init(name: String, age: Int, bark: String) {
+//        self.bark = bark
+//        super.init(name: name, age: age)
+//    }
+//    override func cry() {
+//        print("\(name)이(가) \(bark)라고 짖어요.")
+//    }
+//}
+//
+//let kitty = Cat(name: "나비", age: 3, meow: "야옹")
+//let puppy = Dog(name: "초코", age: 2, bark: "멍멍")
+//let duck = Duck(name: "멋쟁", age: 2, bark: "꽥꽥")
+//
+//let animals: [Animal] = [kitty, puppy, duck]
+///*animals[0].cry()    // 나비이(가) 야옹라고 울어요.
+//animals[1].cry()    // 초코이(가) 멍멍라고 짖어요.
+//animals[2].cry()  */  // 멋쟁이(가) 꽥꽥라고 짖어요.
+//
+//animals.forEach { Animal in
+//    Animal.cry()
+//}
+
+//MARK: 상속 11
+//class Q {
+//    func add(a: Int, b: Int) -> Int {
+//        return a + b
+//    }
+//
+//    func add(a: Double, b: Double) -> Double {
+//        return a + b
+//    }
+//}
+//
+//class P: Q {
+//    func add(a: Int, b: Int, c: Int) -> Int {
+//        return a + b + 1
+//    }
+//}
+
+//MARK: 상속 14
+class Vehicle {
+    var model: String
+    var color: String
+    
+    init(model: String, color: String) {
+        self.model = model
+        self.color = color
+    }
+    
+    func drive() {
+        print("\(model) \(color)", terminator: " ")
+    }
+}
+
+class Car: Vehicle {
+    var doorNumber: Int
+    init(model: String, color: String, doorNumber: Int) {
+        self.doorNumber = doorNumber
+        super.init(model: model, color: color)
+    }
+    override func drive() {
+        //부모 클래스를 직접 받아서 출력하기!
+        super.drive()
+        print("자동차가 \(doorNumber)개의 문을 열고 달립니다. ")
+    }
+}
+
+class Motorcycle: Vehicle {
+    var helmet: Bool
+    init(model: String, color: String, helmet: Bool) {
+        self.helmet = helmet
+        super.init(model: model, color: color)
+    }
+    override func drive() {
+        //부모 클래스의 함수 부분에 아무것도 없을 때
+        if(helmet) {
+            print("\(model) \(color) 오토바이가 헬멧을 쓰고 달립니다.")
+        } else {
+            print("\(model) \(color) 오토바이가 헬멧을 쓰지 않고 달립니다.")
+        }
+        
+    }
+}
+let car: Vehicle = Car(model: "소나타", color: "검정", doorNumber: 4)
+let motorcycle: Vehicle = Motorcycle(model: "니노", color: "노랑", helmet: false)
+car.drive()
+motorcycle.drive()
