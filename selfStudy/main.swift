@@ -626,50 +626,150 @@ print(rectangle.getArea()) // 30.0*/
 //}
 
 //MARK: 상속 14
-class Vehicle {
-    var model: String
-    var color: String
-    
-    init(model: String, color: String) {
-        self.model = model
-        self.color = color
-    }
-    
-    func drive() {
-        print("\(model) \(color)", terminator: " ")
-    }
-}
+//class Vehicle {
+//    var model: String
+//    var color: String
+//    
+//    init(model: String, color: String) {
+//        self.model = model
+//        self.color = color
+//    }
+//    
+//    func drive() {
+//        print("\(model) \(color)", terminator: " ")
+//    }
+//}
+//
+//class Car: Vehicle {
+//    var doorNumber: Int
+//    init(model: String, color: String, doorNumber: Int) {
+//        self.doorNumber = doorNumber
+//        super.init(model: model, color: color)
+//    }
+//    override func drive() {
+//        //부모 클래스를 직접 받아서 출력하기!
+//        super.drive()
+//        print("자동차가 \(doorNumber)개의 문을 열고 달립니다. ")
+//    }
+//}
+//
+//class Motorcycle: Vehicle {
+//    var helmet: Bool
+//    init(model: String, color: String, helmet: Bool) {
+//        self.helmet = helmet
+//        super.init(model: model, color: color)
+//    }
+//    override func drive() {
+//        //부모 클래스의 함수 부분에 아무것도 없을 때
+//        if(helmet) {
+//            print("\(model) \(color) 오토바이가 헬멧을 쓰고 달립니다.")
+//        } else {
+//            print("\(model) \(color) 오토바이가 헬멧을 쓰지 않고 달립니다.")
+//        }
+//        
+//    }
+//}
+//let car: Vehicle = Car(model: "소나타", color: "검정", doorNumber: 4)
+//let motorcycle: Vehicle = Motorcycle(model: "니노", color: "노랑", helmet: false)
+//car.drive()
+//motorcycle.drive()
+//
 
-class Car: Vehicle {
-    var doorNumber: Int
-    init(model: String, color: String, doorNumber: Int) {
-        self.doorNumber = doorNumber
-        super.init(model: model, color: color)
-    }
-    override func drive() {
-        //부모 클래스를 직접 받아서 출력하기!
-        super.drive()
-        print("자동차가 \(doorNumber)개의 문을 열고 달립니다. ")
-    }
-}
+//MARK: 열거형 예제2
+//enum Animal {
+//    case dog(name: String)
+//    case cat(name: String)
+//    case bird(name: String)
+//}
+//
+//func checkAnimal(animals: [Animal]){
+//    animals.forEach { animal in
+//        switch animal {
+//        case .dog(let name): print("이 동물은 개이고 이름은 \(name)입니다.")
+//        case .cat(let name): print("이 동물은 고양이이고 이름은 \(name)입니다.")
+//        case .bird(let name): print("이 동물은 새이고 이름은 \(name)입니다.")
+//        }
+//    }
+//}
+//
+//let animals = [Animal.dog(name: "바둑이"), Animal.cat(name: "나비"), Animal.bird(name: "짹짹이")]
+//checkAnimal(animals: animals)
 
-class Motorcycle: Vehicle {
-    var helmet: Bool
-    init(model: String, color: String, helmet: Bool) {
-        self.helmet = helmet
-        super.init(model: model, color: color)
-    }
-    override func drive() {
-        //부모 클래스의 함수 부분에 아무것도 없을 때
-        if(helmet) {
-            print("\(model) \(color) 오토바이가 헬멧을 쓰고 달립니다.")
-        } else {
-            print("\(model) \(color) 오토바이가 헬멧을 쓰지 않고 달립니다.")
-        }
-        
-    }
-}
-let car: Vehicle = Car(model: "소나타", color: "검정", doorNumber: 4)
-let motorcycle: Vehicle = Motorcycle(model: "니노", color: "노랑", helmet: false)
-car.drive()
-motorcycle.drive()
+
+
+//MARK: 열거형 예제3
+//enum Season {
+//    case spring
+//    case summer
+//    case fall
+//    case winter
+//}
+//
+//func getSeason(date: (month: Int, day: Int)) -> Season {
+//    switch date.month {
+//    case 3...5:
+//        return .spring
+//    case 6...8:
+//        return .summer
+//    case 9...11:
+//        return .fall
+//    default:
+//        return .winter
+//    }
+//}
+//
+//let today = (month: 10, day: 17)
+//let season = getSeason(date: today)
+//
+//print("오늘은 \(season)입니다.")  // 오늘은 autumn입니다.
+//print("오늘은 \( getSeason(date: (month: 6, day: 17)) )입니다.")      // 오늘은 summer입니다.
+//print("오늘은 \( getSeason(date: (month: 12, day: 15)) )입니다.")     // 오늘은 winter입니다.
+//print("오늘은 \( getSeason(date: (month: 3, day: 1)) )입니다.")       // 오늘은 spring입니다.
+
+//MARK: 열거형 예제4
+//enum Option {
+//    case add
+//    case subtract
+//    case multiply
+//    case divide
+//}
+//
+//func calculate(num1: Int, num2: Int, op: Option) -> Int {
+//    switch op {
+//    case .add:
+//        return num1 + num2
+//    case .subtract:
+//        return num1 - num2
+//    case .multiply:
+//        return num1 * num2
+//    default:
+//        return num1 / num2
+//    }
+//}
+//
+//let result = calculate(num1: 10, num2: 5, op: .divide)
+//
+//print("결과는 \(result)입니다.")      //결과는 2입니다.
+//print("결과는 \( calculate(num1: 10, num2: 5, op: .add) )입니다.")        //결과는 15입니다.
+//print("결과는 \( calculate(num1: 10, num2: 5, op: .subtract) )입니다.")   //결과는 5입니다.
+//print("결과는 \( calculate(num1: 10, num2: 5, op: .multiply) )입니다.")   //결과는 50입니다.
+
+//MARK: 열거형 예제5
+//enum Beverage {
+//    case coffee(price: Int)
+//    case tea(price: Int)
+//    case juice(price: Int)
+//}
+//
+//func printTypeAndPrice(beverages: [Beverage]) {
+//    beverages.forEach { beverages in
+//        switch beverages {
+//        case .coffee(let price): print("이 음료는 커피이고 가격은 \(price)입니다.")
+//        case .tea(let price): print("이 음료는 차이고 가격은 \(price)입니다.")
+//        case .juice(let price): print("이 음료는 주스이고 가격은 \(price)입니다.")
+//        }
+//    }
+//}
+//
+//let beverages = [Beverage.coffee(price: 3000), Beverage.tea(price: 2000), Beverage.juice(price: 2500)]
+//printTypeAndPrice(beverages: beverages)
