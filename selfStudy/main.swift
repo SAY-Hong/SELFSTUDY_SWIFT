@@ -676,55 +676,62 @@ print(rectangle.getArea()) // 30.0*/
 //
 
 //MARK: 열거형 예제2
-//enum Animal {
-//    case dog(name: String)
-//    case cat(name: String)
-//    case bird(name: String)
-//}
-//
-//func checkAnimal(animals: [Animal]){
-//    animals.forEach { animal in
-//        switch animal {
-//        case .dog(let name): print("이 동물은 개이고 이름은 \(name)입니다.")
-//        case .cat(let name): print("이 동물은 고양이이고 이름은 \(name)입니다.")
-//        case .bird(let name): print("이 동물은 새이고 이름은 \(name)입니다.")
-//        }
-//    }
-//}
-//
-//let animals = [Animal.dog(name: "바둑이"), Animal.cat(name: "나비"), Animal.bird(name: "짹짹이")]
-//checkAnimal(animals: animals)
+enum Animal {
+    case dog(name: String) //enum에 파라미터 호출하면 원시값 선언 안된다!
+    case cat(name: String)
+    case bird(name: String)
+}
+
+func checkAnimal(animals: [Animal]){
+    /*animals.forEach { animal in
+        switch animal {
+        case .dog(let name): print("이 동물은 개이고 이름은 \(name)입니다.")
+        case .cat(let name): print("이 동물은 고양이이고 이름은 \(name)입니다.")
+        case .bird(let name): print("이 동물은 새이고 이름은 \(name)입니다.")
+        }*/
+        for animal in animals {
+            switch animal {
+            case .dog(let name): print("이 동물은 개이고 이름은 \(name)입니다.")
+            case .cat(let name): print("이 동물은 고양이이고 이름은 \(name)입니다.")
+            case .bird(let name): print("이 동물은 새이고 이름은 \(name)입니다.")
+            }
+        }
+    }
+
+
+let animals = [Animal.dog(name: "바둑이"), Animal.cat(name: "나비"), Animal.bird(name: "짹짹이")]
+checkAnimal(animals: animals)
 
 
 
 //MARK: 열거형 예제3
-//enum Season {
-//    case spring
-//    case summer
-//    case fall
-//    case winter
-//}
-//
-//func getSeason(date: (month: Int, day: Int)) -> Season {
-//    switch date.month {
-//    case 3...5:
-//        return .spring
-//    case 6...8:
-//        return .summer
-//    case 9...11:
-//        return .fall
-//    default:
-//        return .winter
-//    }
-//}
-//
-//let today = (month: 10, day: 17)
-//let season = getSeason(date: today)
-//
-//print("오늘은 \(season)입니다.")  // 오늘은 autumn입니다.
-//print("오늘은 \( getSeason(date: (month: 6, day: 17)) )입니다.")      // 오늘은 summer입니다.
-//print("오늘은 \( getSeason(date: (month: 12, day: 15)) )입니다.")     // 오늘은 winter입니다.
-//print("오늘은 \( getSeason(date: (month: 3, day: 1)) )입니다.")       // 오늘은 spring입니다.
+enum Season: String {
+    case spring = "봄"
+    case summer = "여름"
+    case fall = "가을"
+    case winter = "겨울"
+}
+
+func getSeason(date: (month: Int, day: Int)) -> String {
+    switch date.month {
+    case 3...5:
+        return Season.spring.rawValue
+    case 6...8:
+        return Season.summer.rawValue
+    case 9...11:
+        return Season.fall.rawValue
+    default:
+        return Season.winter.rawValue
+    }
+}
+
+let today = (month: 10, day: 17)
+let season = getSeason(date: today)
+
+print("오늘은 \(season)입니다.")  // 오늘은 autumn입니다.
+print("오늘은 \( getSeason(date: (month: 6, day: 17)))입니다.")      // 오늘은 summer입니다.
+print("오늘은 \( getSeason(date: (month: 12, day: 15)))입니다.")     // 오늘은 겨울입니다.
+print("오늘은 \( getSeason(date: (month: 3, day: 1)))입니다.")       // 오늘은 봄입니다.
 
 //MARK: 열거형 예제4
 //enum Option {
@@ -773,3 +780,48 @@ print(rectangle.getArea()) // 30.0*/
 //
 //let beverages = [Beverage.coffee(price: 3000), Beverage.tea(price: 2000), Beverage.juice(price: 2500)]
 //printTypeAndPrice(beverages: beverages)
+//
+//
+//
+////var a = [1, 2, 3]
+//var a: [String] = []
+
+/*func solution(_ rank:[Int], _ attendance:[Bool]) -> Int {
+    var arr: [Int] = []
+    var index = 0
+    
+    var a: Int = 0
+    var b: Int = 0
+    var c: Int = 0
+    
+    for i in 0..<rank.count {
+        if attendance[i] {
+            arr.append(rank[i])
+        }
+    }
+    
+    arr.sort()
+    
+    for i in 0..<rank.count {
+        if arr[0] == rank[i] {
+            a  = i
+        } else if arr[1] == rank[i] {
+            b = i
+        } else if arr[2] == rank[i] {
+            c = i
+        }
+    }
+    
+    return 10000 * a + 100 * b + c
+}
+print(solution([3, 7, 2, 5, 4, 6, 1], [false, true, true, true, true, false, false]))*/
+
+
+
+
+
+
+
+
+
+
