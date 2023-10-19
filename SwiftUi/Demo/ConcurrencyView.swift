@@ -24,7 +24,7 @@ struct ConcurrencyView: View {
         await withTaskGroup(of: Int.self) { [indexList] group in //'[indexList]': 캡처리스트 -> 교착상태 예방
             for i in 0..<indexList.count {
                 group.addTask {
-                   return await sumFrom(indexList[i] + 1, indexList[i] + 50)
+                   return await sumFrom(indexList[i] + 1, indexList[i] + 50) //숨어있던 return의 존재
                 }
             }
             var totalSum: [Int] = []
