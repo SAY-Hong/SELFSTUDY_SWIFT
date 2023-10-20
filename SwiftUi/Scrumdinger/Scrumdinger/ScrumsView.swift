@@ -11,9 +11,21 @@ struct ScrumsView: View {
     let scrums: [DailyScrum]
     
     var body: some View {
-        List(scrums) { scrum in //title프로퍼티 -> 각 아이템을 구별하는 고유 id로 쓰기.
-            CardView(scrum: scrum) //카드뷰 초기화하가
+        //네비게이션 계층 만들기
+        NavigationStack {
+            List(scrums) { scrum in //title프로퍼티 -> 각 아이템을 구별하는 고유 id로 쓰기.
+                NavigationLink(destination: Text(scrum.title)) { //TODO: Create the detail view - step5
+                    CardView(scrum: scrum) //카드뷰 초기화하가
+                }
                 .listRowBackground(scrum.theme.mainColor) //listRowBackground로 고유 색깔 지정해주기.
+            }
+            .navigationTitle("Daily Scrum")
+            .toolbar {
+                Button(action: {}, label: { //TODO: 버튼 기능 구현하기
+                    Image(systemName: "plus")
+                })
+                .accessibilityLabel("New Scrum")
+            }
         }
     }
 }
