@@ -10,29 +10,44 @@ import SwiftUI
 //MARK: 뷰 이동하기
 struct ContentView: View {
     var body: some View {
-        
-        NavigationView {
+        NavigationStack {
             List {
-                NavigationLink(destination: BasicView()) {
-                        Text("수업 끄적이기")
-                 }
-                NavigationLink(destination: MoneyView()) {
-                        Text("급여 계산하기")
-                 }
-                NavigationLink(destination: GulBoxView()) {
-                        Text("귤 박스 수 계산하기")
-                 }
-                NavigationLink(destination: CalculateView()) {
-                        Text("계산기 만들기")
-                 }
-                NavigationLink(destination: ScoreView()) {
-                        Text("역량 시험 점수 확인하기")
-                 }
+                Section("일단 때려넣기1") {
+                    NavigationLink(destination: BasicView()) { Text("수업 끄적이기") }
+                    NavigationLink(destination: MoneyView()) { Text("급여 계산하기") }
+                    NavigationLink(destination: GulBoxView()) { Text("귤 박스 수 계산하기")}
+                    NavigationLink(destination: CalculateView()) { Text("계산기 만들기")}
+                    NavigationLink(destination: ScoreView()) { Text("역량 시험 점수 확인하기")}
+                }
                 
+                Section("일단 때려넣기1") {
+                    NavigationLink(destination: BasicView()) { Text("수업 끄적이기") }
+                    NavigationLink(destination: MoneyView()) { Text("급여 계산하기") }
+                    NavigationLink(destination: GulBoxView()) { Text("귤 박스 수 계산하기")}
+                    NavigationLink(destination: CalculateView()) { Text("계산기 만들기")}
+                    NavigationLink(destination: ScoreView()) { Text("역량 시험 점수 확인하기")}
+                }
+                Section("일단 때려넣기1") {
+                    NavigationLink(destination: BasicView()) { Text("수업 끄적이기") }
+                    NavigationLink(destination: MoneyView()) { Text("급여 계산하기") }
+                    NavigationLink(destination: GulBoxView()) { Text("귤 박스 수 계산하기")}
+                    NavigationLink(destination: CalculateView()) { Text("계산기 만들기")}
+                    NavigationLink(destination: ScoreView()) { Text("역량 시험 점수 확인하기")}
+                }
+                Section("일단 때려넣기1") {
+                    NavigationLink(destination: BasicView()) { Text("수업 끄적이기") }
+                    NavigationLink(destination: MoneyView()) { Text("급여 계산하기") }
+                    NavigationLink(destination: GulBoxView()) { Text("귤 박스 수 계산하기")}
+                    NavigationLink(destination: CalculateView()) { Text("계산기 만들기")}
+                    NavigationLink(destination: ScoreView()) { Text("역량 시험 점수 확인하기")}
+                }
             }.navigationTitle("Say's Log")
+            
+            
         }
     }
 }
+
 
 #Preview {
     ContentView()

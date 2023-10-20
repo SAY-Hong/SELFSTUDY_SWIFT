@@ -20,7 +20,7 @@ struct ConcurrencyView: View {
 
     func doSomething() async -> Int {
         var total = 0
-        var indexList = [1, 50]
+        let indexList = [1, 50]
         await withTaskGroup(of: Int.self) { [indexList] group in //'[indexList]': 캡처리스트 -> 교착상태 예방
             for i in 0..<indexList.count {
                 group.addTask {

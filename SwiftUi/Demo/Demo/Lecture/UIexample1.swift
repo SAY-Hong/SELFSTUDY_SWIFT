@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UIeample1: View {
+struct UIexample1: View {
     @State private var count = 0
     
     var body: some View {
@@ -30,5 +30,5 @@ struct UIeample1: View {
 }
 
 #Preview {
-    UIeample1()
+    UIexample1()
 }

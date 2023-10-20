@@ -27,7 +27,6 @@ struct EvenOrOddView: View {
                         //.padding()
                         //.border(Color.black)
                         .frame(minHeight: 50, maxHeight: 50)
-                        
                 }.buttonStyle(BorderedButtonStyle())
             }
             if clickCheck == 1 {
