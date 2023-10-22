@@ -13,9 +13,11 @@ struct DetailView: View {
     var body: some View {
         List {
             Section(header: Text("Meeting Info")) { //List 내에서 시각적으로 구분해주는 주는 Section -> 컨텐츠 내용 자르기 & 그룹화
-                Label("Start Meeting", systemImage: "timer") //MARK: Label 이용하기
-                    .font(.headline)
-                    .foregroundColor(.accentColor)
+                NavigationLink(destination: MeetingView()){ //nevigation hierarchy 세팅하기
+                    Label("Start Meeting", systemImage: "timer") //MARK: Label 이용하기
+                        .font(.headline)
+                        .foregroundColor(.accentColor)
+                }
                 HStack {
                     Label("Length", systemImage: "clock")
                     Spacer()
@@ -31,13 +33,23 @@ struct DetailView: View {
                         .background(scrum.theme.mainColor)
                         .cornerRadius(4)
                 }
+                .accessibilityElement(children: .combine)
+            }
+            Section(header: Text("Attendees")) {
+                ForEach(scrum.attendees) { attendee in
+                    Label(attendee.name, systemImage: "person")
+                }
             }
         }
+        .navigationTitle(scrum.title)
     }
 }
 
 #Preview {
-    NavigationStack { //MARK: NavigationStack로 굳이 감싸는 이유가..?
+    //MARK: ?
+    //NavigationStack로 감싸는 이유
+    //NavigationStack is a container view that presents a stack of views in a navigation hierarchy.
+    NavigationStack {
         DetailView(scrum: DailyScrum.sampleData[0])
     }
 }
