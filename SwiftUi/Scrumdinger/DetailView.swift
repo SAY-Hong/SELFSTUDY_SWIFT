@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     let scrum: DailyScrum
-    
+    @State private var isPresentingEditView = false
     var body: some View {
         List {
             Section(header: Text("Meeting Info")) { //List 내에서 시각적으로 구분해주는 주는 Section -> 컨텐츠 내용 자르기 & 그룹화
@@ -42,6 +42,31 @@ struct DetailView: View {
             }
         }
         .navigationTitle(scrum.title)
+        .toolbar { //MARK: toolbar 사용하기
+            Button("Edit") {
+                isPresentingEditView = true
+            }
+        }
+        .sheet(isPresented: $isPresentingEditView, content: {  //MARK: sheet
+            NavigationStack {
+                DetailEditView()
+                    .navigationTitle(scrum.title)
+                    .toolbar {
+                        //MARK: toolbar - ToolbarItem
+                        //Cancel 클릭 시 EditView 내려가기하기
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Cancel") {
+                                isPresentingEditView = false
+                            }
+                        }
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Done") {
+                                isPresentingEditView = true
+                            }
+                        }
+                    }
+            }
+        })
     }
 }
 
@@ -50,6 +75,6 @@ struct DetailView: View {
     //NavigationStack로 감싸는 이유
     //NavigationStack is a container view that presents a stack of views in a navigation hierarchy.
     NavigationStack {
-        DetailView(scrum: DailyScrum.sampleData[0])
+        DetailView(scrum: DailyScrum.sampleData[1])
     }
 }
