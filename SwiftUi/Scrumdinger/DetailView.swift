@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct DetailView: View {
-    let scrum: DailyScrum
+    @Binding var scrum: DailyScrum
+    
+    @State private var editingScrum = DailyScrum.emptyScrum
     @State private var isPresentingEditView = false
     var body: some View {
         List {
@@ -49,7 +51,7 @@ struct DetailView: View {
         }
         .sheet(isPresented: $isPresentingEditView, content: {  //MARK: sheet
             NavigationStack {
-                DetailEditView()
+                DetailEditView(scrum: $editingScrum)
                     .navigationTitle(scrum.title)
                     .toolbar {
                         //MARK: toolbar - ToolbarItem
@@ -61,7 +63,8 @@ struct DetailView: View {
                         }
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Done") {
-                                isPresentingEditView = true
+                                isPresentingEditView = false
+                                scrum = editingScrum
                             }
                         }
                     }
@@ -75,6 +78,6 @@ struct DetailView: View {
     //NavigationStack로 감싸는 이유
     //NavigationStack is a container view that presents a stack of views in a navigation hierarchy.
     NavigationStack {
-        DetailView(scrum: DailyScrum.sampleData[1])
+        DetailView(scrum: .constant(DailyScrum.sampleData[0]))
     }
 }
