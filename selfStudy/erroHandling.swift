@@ -59,12 +59,12 @@ func celsiusFahrenheit(_ fahrenheit: Double) throws -> Double {
     return fahrenheit * 1.8 + 32
 }
 
-do {
+/*do {
     let fahrenheit = try celsiusFahrenheit(-300) //왜 함수 안에 넣으면 안되냐 ㅆ
     print(fahrenheit)
 } catch TemperatureError.invaildTemperature {
     print("Invalid temperature")
-}
+}*/
 
 func sendFile() {
     do {
@@ -117,9 +117,9 @@ func validatePassword(password: String) throws {
     guard checkLower > 0 else {
         throw PasswordError.missingLowercase
     }
-    /*guard checkSymbol > 0 else {
+    guard checkSymbol > 0 else {
         throw PasswordError.missingSymbol
-    }*/
+    }
     guard checkNumber > 0 else {
         throw PasswordError.missingNumber
     }
