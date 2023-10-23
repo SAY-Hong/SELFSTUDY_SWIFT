@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B10842662ABBC3840099207E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10842652ABBC3840099207E /* main.swift */; };
 		B1B7ECF02ABD79EA004E8FE5 /* readlineFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B7ECEF2ABD79EA004E8FE5 /* readlineFunction.swift */; };
+		B1CF68BF2AE6558700149EEC /* divide2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CF68BE2AE6558700149EEC /* divide2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,7 +27,10 @@
 /* Begin PBXFileReference section */
 		B10842622ABBC3840099207E /* selfStudy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = selfStudy; sourceTree = BUILT_PRODUCTS_DIR; };
 		B10842652ABBC3840099207E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		B13CE5E82AE05B8B004F38D4 /* erroHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = erroHandling.swift; sourceTree = "<group>"; };
 		B1B7ECEF2ABD79EA004E8FE5 /* readlineFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readlineFunction.swift; sourceTree = "<group>"; };
+		B1CF68BE2AE6558700149EEC /* divide2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = divide2.swift; sourceTree = "<group>"; };
+		B1E97E092ADFC897007967D1 /* divide1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = divide1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,9 @@
 			children = (
 				B10842652ABBC3840099207E /* main.swift */,
 				B1B7ECEF2ABD79EA004E8FE5 /* readlineFunction.swift */,
+				B1E97E092ADFC897007967D1 /* divide1.swift */,
+				B13CE5E82AE05B8B004F38D4 /* erroHandling.swift */,
+				B1CF68BE2AE6558700149EEC /* divide2.swift */,
 			);
 			path = selfStudy;
 			sourceTree = "<group>";
@@ -125,6 +132,7 @@
 			files = (
 				B10842662ABBC3840099207E /* main.swift in Sources */,
 				B1B7ECF02ABD79EA004E8FE5 /* readlineFunction.swift in Sources */,
+				B1CF68BF2AE6558700149EEC /* divide2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
