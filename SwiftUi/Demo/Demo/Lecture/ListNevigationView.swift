@@ -55,14 +55,19 @@ struct ListNevigationView: View {
         }
         
         //동적리스트 forEach 사용 예시
+        //MARK: Section
         List {
-            Toggle(isOn: $istToggledOn) {
-                Text("Allow Notification")
+            Section(header: Text("SETTING")) {
+                Toggle(isOn: $istToggledOn) {
+                    Text("Allow Notification")
+                }
             }
-            ForEach (listData) { item in
-                HStack {
-                    Image(systemName: item.imageName)
-                    Text(item.task)
+            Section(header: Text("HAVE TODO")) {
+                ForEach (listData) { item in
+                    HStack {
+                        Image(systemName: item.imageName)
+                        Text(item.task)
+                    }
                 }
             }
         }
