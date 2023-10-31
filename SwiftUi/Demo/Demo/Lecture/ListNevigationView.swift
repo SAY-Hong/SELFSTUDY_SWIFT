@@ -71,6 +71,13 @@ struct ListNevigationView: View {
                 }
             }
         }
+        .refreshable { //MARK: 새로고침 동작 추가하기
+            listData = [
+                ToDoItem(task: "Order dinner", imageName: "dollarsign.circle.fill"),
+                ToDoItem(task: "Call finacial advisor", imageName: "phone.fill"),
+                ToDoItem(task: "Sell the kids", imageName: "person.2.fill")
+            ]
+        }
     }
 }
 
