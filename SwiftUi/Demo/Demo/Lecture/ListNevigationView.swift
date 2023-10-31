@@ -26,6 +26,8 @@ struct ListNevigationView: View {
         ToDoItem(task: "Wash the car", imageName: "car.fill")
     ]
     
+    @State private var istToggledOn = true
+    
     var body: some View {
        //가장 단순한 형태의 List 표현
         //하나 이상 뷰의 각 행을 수직 방향의 목록으로 정보를 표현
@@ -49,6 +51,19 @@ struct ListNevigationView: View {
             HStack {
                 Image(systemName: item.imageName)
                 Text(item.task)
+            }
+        }
+        
+        //동적리스트 forEach 사용 예시
+        List {
+            Toggle(isOn: $istToggledOn) {
+                Text("Allow Notification")
+            }
+            ForEach (listData) { item in
+                HStack {
+                    Image(systemName: item.imageName)
+                    Text(item.task)
+                }
             }
         }
     }
