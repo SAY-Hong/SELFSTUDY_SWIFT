@@ -33,78 +33,21 @@ struct ListNevigationView: View {
         //하나 이상 뷰의 각 행을 수직 방향의 목록으로 정보를 표현
         //리스트 구분자 및 행 수정하기.
         List {
-            Text("Wash a car")
-                .listRowSeparator(.hidden) //List안에 텍스트 선언했을 때 수정자 나온다. (원래 아니었나봄!)
-            Text("Vaccum House") //배경에 뷰 설정/적용하기 -> 사진 ver
-                .listRowBackground(Image("poor"))
-            Text("Pick up kids from scheool bus @ 3pm")
-                .listRowSeparatorTint(.red) //구분선 색깔 바꾸기
-            Text("Auction the kids on eBay")
-                .listRowSeparatorTint(.green)
-            Text("Order Pizza for dinner")
-                .listRowBackground(Color.indigo) //배경에 뷰 설정/적용하기 -> 색깔 변경 ver
-        }
-        
-        //리스트 셀은 여러 컴포넌트를 조합하여 셀에 표시할 수 있다.
-        //데이터의 묶음 -> 리스트로 만들어서 하나씩 알아서 접근하게 코드 작성하기.
-        //MARK: 네비게이션스택 사용하기
-        NavigationStack {
-            List(listData) { item in
-                NavigationLink(value: item.task) {
+            Section(header: Text("To Do Tasks")) {
+                ForEach(listData) { item in
                     HStack {
                         Image(systemName: item.imageName)
                         Text(item.task)
                     }
-                }
-            }
-            .navigationDestination(for: String.self) {
-                Text("Selected Task = \($0)")
+                }.onDelete(perform: { indexSet in //onDelete와 onMove
+                    listData.remove(atOffsets: indexSet)
+                })
+                .onMove(perform: { indices, newOffset in
+                    listData.move(fromOffsets: indices, toOffset: newOffset)
+                })
             }
         }
         
-        NavigationStack {
-            //동적리스트 forEach 사용 예시
-            //MARK: Section
-            List {
-                Section(header: Text("SETTING")) {
-                    Toggle(isOn: $istToggledOn) {
-                        Text("Allow Notification")
-                    }
-                }
-                
-                //값 타입별 네비게이션
-                Section {
-                    NavigationLink(value: listData.count) {
-                        Text("View Task Count")
-                    }
-                }
-                
-                Section(header: Text("HAVE TODO")) {
-                    ForEach (listData) { item in
-                        NavigationLink(value: item.task) {
-                            HStack {
-                                Image(systemName: item.imageName)
-                                Text(item.task)
-                            }
-                        }
-                    }
-                }
-                //MARK: Hashable 코드 다시 살펴보기
-                .navigationDestination(for: Int.self) {
-                    Text("Number of Task = \($0)")
-                }
-                .navigationDestination(for: String.self) {
-                    Text("Selected Task = \($0)")
-                }
-            }
-            .refreshable { //MARK: 새로고침 동작 추가하기
-                listData = [
-                    ToDoItem(task: "Order dinner", imageName: "dollarsign.circle.fill"),
-                    ToDoItem(task: "Call finacial advisor", imageName: "phone.fill"),
-                    ToDoItem(task: "Sell the kids", imageName: "person.2.fill")
-                ]
-            }
-        }
     }
 }
 
