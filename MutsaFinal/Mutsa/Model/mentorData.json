@@ -1,0 +1,63 @@
+[
+   {
+        "id": "m1",
+        "name": "박철현",
+        "image": "park",
+        "position": "Mentor",
+        "oneSentence": "여러분과 개발의 즐거움을 함께할 수 있었으면 합니다.",
+        "history": "• 프리랜서 iOS 개발자\n• 롯데카드, 컬리 등에서 근무\n",
+        "gitUrl": "https://github.com/blueprajna",
+        "blogUrl": "https://howlcoding.com"
+    },
+   {
+       "id": "m2",
+       "name": "하울",
+       "image": "howl",
+       "position": "Mentor",
+       "oneSentence": "개발자에게 가장 중요한 자질은 엉덩이가 의자에 붙는 거라고 생각해요",
+       "history": "• Exlou(구 하울랩)개발 회사 CEO/CTO\n• 대림 비데 IOT, 네스앤택 모바일앱 드론 컨트롤러 개발\n",
+       "gitUrl": "https://github.com/you6878",
+       "blogUrl": "https://howlcoding.com"
+    },
+   {
+       "id": "m3",
+       "name": "리이오",
+       "image": "leo",
+       "position": "Mentor",
+       "oneSentence": "단순히 지식을 배우는 것이 아닌 활용할 수 있는 방법을 알려주고 싶습니다.",
+       "history": "• 와디즈 IOS 개발\n•  유투브 '개발자리' 운영\n• 레츠스위프트, 아디오스, KWDC 등 커뮤니티 활동",
+       "gitUrl": "https://github.com/M1zz",
+       "blogUrl": "http://dev200ok.blogspot.com"
+   },
+   {
+       "id": "m4",
+       "name": "그린",
+       "image": "green",
+       "position": "Mentor",
+       "oneSentence": "불확실성에 도전하는 iOS 앱 개발자입니다.",
+       "history": "• 스타트업 '정육각' 근무\n• 한화생명 iOS 앱 개발 중\n•  Mash-up 개발 동아리 IOS기수 활동 중\n",
+       "gitUrl": "https://github.com/GREENOVER",
+       "blogUrl": "https://green1229.tistory.com"
+   },
+   {
+       "id": "m5",
+       "name": "이소영",
+       "image": "ott",
+       "position": "Mentor",
+       "oneSentence": "꿋꿋하게 내 갈 길을 가는 것! 내실을 쌓아가는 것!",
+       "history": "• 빗썸코리아에서  iOS 개발 근무 중\n• 사이드 프로젝트 '모지또' 앱 제작 중\n",
+       "gitUrl": "github.com/hohyeonmoon",
+       "blogUrl": "https://ohttios.tistory.com/"
+   },
+   {
+       "id": "m6",
+       "name": "문호현",
+       "image": "moon",
+       "position": "Mentor",
+       "oneSentence": " 명확한 목표를 갖고 개발을 생활화해서 적당히 공부하고 사용해 봅시다.",
+       "history": "• 현) AI 스타트업에서 iOS 개발자 근무\n• 전) 리디 근무\n• 민사고, UC 버클리, 서울대 연구실\n",
+       "gitUrl": "https://github.com/hohyeonmoon",
+       "blogUrl": "https://www.hohyeonmoon.com"
+   }
+]
+
